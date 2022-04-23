@@ -1,3 +1,6 @@
+React learning materials organised from @freecodecamp by jessica-llai
+
+
 # create a react component 
 class Kitten extends React.Component {
   constructor(props) {     # constructor is a class that calls super 
