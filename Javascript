@@ -53,5 +53,88 @@ function timesFive(x) {
 timesFive(10) --- result: 50 
 
 
+# local scope and function 
+Variables which are declared within a function, as well as the function parameters, have local scope. That means they are only visible within that function.
+function myTest() {
+  const loc = "foo";
+  console.log(loc);
+}
+
+myTest(); = foo
+console.log(loc); = error, as loc not defined outside 
+
+#Global vs. Local Scope in Functions
+It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.
+Variables which are declared without the let or const keywords are automatically created in the global scope. 
+
+
+const someVar = "Hat";
+
+function myFun() {
+  const someVar = "Head";
+  return someVar;
+}
+myFun() = Head
+
+# undefined value from a function 
+if did not have a return statement within a function, then if you call it, returned value = undefined 
+
+# asisgnment with a returned value 
+can do x = functionA(10)
+
+# boolean values 
+not need for qutation mark
+
+# if condition 
+function test (x) {
+  if (x) {
+    return "It was true";
+  }
+  return "It was false";
+}
+
+test(true); = It was true
+test(false); = It was false 
+
+# if conditions with equality operator 
+function test(x) {
+  if (x==1) { 
+  return "true"
+  }
+  return "false"
+}
+(btw, if use strict euqality operator ===, then even the data type should be the same)
+(strict not euqal to: !==, less strict not equal to !=)
+# can add multiple conditions 
+function comaprison(a,b,c) {
+  if (a===b===c) {
+  return "true"
+  }
+  return "false"
+
+}
+(btw, can use typeof "3" to know data type)
+
+
+# operator 
+and &&
+or ||
+if() {
+} else if {
+} else {
+}
+
+# Logical Order in If Else Statements
+if satisfy the first condition, then return that one and stop running 
+
+
+
+
+
+
+
+
+
+
 
 
