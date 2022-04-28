@@ -128,6 +128,119 @@ if() {
 if satisfy the first condition, then return that one and stop running 
 
 
+# default statement in switch 
+function switch1(x){
+  y="";
+  
+  switch (x) {
+  case "a":
+    y="aaa";
+    break;
+  case "b":
+    y="bbb";
+    break;
+...
+  default:
+    y="what the fuck is this";
+    break;
+    }
+    return y;
+
+}
+switch1(a) = aaa
+
+# multiple identical options in switch statements 
+function sequentialSizes(val) {
+  let answer = "";
+  // Only change code below this line
+  switch(val){
+    case 1:
+    case 2:
+    case 3: 
+      answer="Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer="Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer="High";
+      break;
+  }
+
+
+
+  // Only change code above this line
+  return answer;
+}
+
+sequentialSizes(1); = low; if no break, wont stop and wont print 
+
+#replacing if else chains with switch 
+tips: case arlready means ===
+case 1 means val===1
+
+# returning boolean values 
+1===
+function isEqual(x,y) {
+if (x===y){
+  return true;
+  } else {
+  return false;
+  }
+}
+2===
+function isEqual(x,y){
+return(x===y) # can replace with ><!=
+
+}
+
+#returne early pattern in a function 
+
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun(); = "world", and the byebye will not shown wiothoyt a return 
+tips: undefined value is not a string, no need for ""
+
+# object 
+access the data in objects through what are called properties.
+can put an array in an object 
+const shibaInu = {
+  "name": "piggy",
+  legs: 4,
+  tails: 1,
+  friends: ["jessica, william"]
+  }
+  
+ # accessing object property 
+ can use both . and [] to call property; notice that if the property name had space, must use [] with quatation
+ 
+ cost test = {
+ a:1,
+ "b":2
+ }
+const test1=test.a
+const test2 = test[b]
+
+# access object prop with variables 
+const className={
+1: "orange",
+2: "apple"
+}
+
+const classNumber=1;
+const class=className[classnumber]
+
+
+
+
+
 
 
 
