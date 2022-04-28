@@ -1,0 +1,21 @@
+# if do ml locally, need these packages 
+tensorflow==2.7.0
+scikit-learn==1.0.1
+pandas==1.1.5
+matplotlib==3.2.2
+seaborn==0.11.2
+
+# ml
+input data and answer - find the rule 
+NN - deep learning
+
+find out the y=2x-1
+model = keras.Sequential([keras.layers.Dense(units=1,input_shape=[1])])
+mode.compike(optermizer='sgd', loss='mean_squared_error')
+xs=np.array([x1,x2,x3], dtype=float)
+ys=np.array([y1,y2,xy], dtype=float)
+model.fit(xs,ys,epochs=500)
+print=[model.predict(10.0)] = 18.975801
+
+500 epochs means try guess for 500 times - and compare the guess with the answer and render to optimiser then the loss will be smaller 
+
