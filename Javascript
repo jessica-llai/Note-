@@ -171,9 +171,6 @@ function sequentialSizes(val) {
       break;
   }
 
-
-
-  // Only change code above this line
   return answer;
 }
 
@@ -237,14 +234,110 @@ const className={
 const classNumber=1;
 const class=className[classnumber]
 
+example: 
+const myDog = {
+  "breed":"Shiba",
+  "name":"cocopig",
+}
+myDog.breed= "shiba-inu"; (rename)
+myDog.colour="brown"; (add new property)
+delete myDog.breed; (delete property)
 
 
 
+# using objects for look up 
+
+function phoneticLookup(val) {
+  let result = "";
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+  }
+  return result;
+}
+
+phoneticLookup("charlie");
+
+equals ===
+
+function phoneticLookup(val) {
+let result="";
+let lookup= {
+"alpha":"Adams",
+"bravo":"Boston",
+
+  };
+  result=lookup[val]
+  return result;
+}
+
+# testing objects for properties 
+
+const myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+
+function check(myObj.top) = {
+if (myObj.hasOwnProperty(top)) {
+return myObj[top];
+  } else {
+  return "Not Found";
+  }
+}
+result: hat 
+
+
+# adding objects in an array of objects 
+example
+
+adding the mla by adding {}, above the original object billy joel
+
+const myMusic = [
+  {
+    "artist":"mla",
+    "title":"marching years",
+    "release_year": 2013,
+    "formats":[
+      "CD",
+      "LP"
+    ],
+  }, 
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
 
 
 
+#access nested object using dot or bracket 
 
+const myRoom = {
+  "inside": {
+    "bed":"pillow"
+    "desk":"laptop","pen"
+  }
+  "outside": {
+  "shoe rack": shoes
+  }
+}
 
+const outsideMyRoom = myRoom.outside["shoe rack"] (noted: no dot between object and [])
+
+# to access nested array 
+const latop = myRoom[0].desk[0]
 
 
 
