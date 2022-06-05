@@ -340,6 +340,64 @@ const outsideMyRoom = myRoom.outside["shoe rack"] (noted: no dot between object 
 const latop = myRoom[0].desk[0]
 
 
+# empty string: ""
+
+# while loop 
+const myArray = [];
+let i=0;
+
+while(i<6) {
+  myArray.push(i);
+  i++
+}
+result: 1,2,3,4,5 (ascending because of push())
+-----
+
+const myArray = [];
+let i=5;
+
+while(i>=0) {
+  myArray.push(i);
+  i--;
+}
+console.log(myArray) 
+result: 5,4,3,2,1
+
+# for loop
+
+for (let i=0, i<n, i++/ i+=4)
+for (initial statemnet, conditional statement if true, then c statement)
+
++=2 can get odds/even number array
+x.length-1 can get the last number in the array 
+
+# below add up the value of all myArr
+const myArr = [2, 3, 4, 5, 6];
+let total = 0;
+for (let i=0; i<myArr.length;i++ ){
+  total += myArr[i]
+  
+} 
+
+# multiply all number in the array 
+const arr[[1,2,3],[1,2]]
+let product = 1;
+for (i=0; i<arr.length; i++){
+  for (m=0; m<arr[i].length; j++){
+  product = product * arr[i][j]
+  }
+} 
+arr[i][j]= each number in each subarray
+
+
+
+
+
+
+
+
+
+
 
 
 
