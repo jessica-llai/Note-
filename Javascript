@@ -389,6 +389,129 @@ for (i=0; i<arr.length; i++){
 } 
 arr[i][j]= each number in each subarray
 
+# do... while 
+
+const arr=[]
+let i = 0,
+do { 
+  arr.push(i);
+  i ++
+
+  } while (i<5)
+
+tips: [] create a empty arr that can be used latter 
+
+# recursiopn to replace for loop 
+
+
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+  
+
+// n is the first n element of the arr, if n=3 in [a,b,c,d,...,z], then arr[n-1] element is [a,b,c]
+  it will break down to (arr,c)x arr[2]= (arr,c)x c = (arr,b) x arr[1] x c = (arr,b) x b x c 
+  
+===
+  function multiply(arr, n) {
+    let product = 1;
+    for (let i = 0; i < n; i++) {
+      product *= arr[i];
+    }
+    return product;
+  }
+  
+  
+
+# profile look up with for loop 
+
+function lookUpProfile(name, prop) {
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)// or prop in contacts[x]) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+  
+
+
+# built in random number function 
+function randomNumber () {
+return Math.random()
+}
+tips: 
+0 <=Math.random() <1
+Math.floor() round the number to a whole number 
+Math.floor(Math.random()*100) = can generate a round number from 0-100
+
+
+# Generate Random Whole Numbers within a Range
+function range(min,max){
+  return Math.floor(Math.random()*(max-1+min))+min
+}
+
+# parsing string and convert to int with parseInt
+
+function parsing(str){
+  return parseInt(str)
+}
+'56'->56
+
+# conditional expresssion 
+
+a?b:c
+if a is true, then b, if not, then c 
+if b and c is string need "b" and "c"
+
+multiple conditions
+function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+}
+
+# resursion to count down / up 
+
+count down 
+
+function countdown (i) {
+if (i<1) {
+  return []
+  } else { 
+  const arr= countdown(i-1);
+  return arr.unshift(i);
+  return i
+  }
+
+}
+
+or function countdown(n){
+   return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+tips: concat means adding new element in the array from the back
+
+# recursion to create a range of numbers 
+
+function range(a,b) {
+(a===b){
+  return [a]};
+} else {
+  var numbers = range(a,b-1);
+  numbers.push(b);
+  return numbers 
+  }
+  
+example 
+(2,5)
+numbers = range(2,4),5=range(2,3),4,5=range(2,2)3,4,5=2,3,4,5
+
 
 
 
