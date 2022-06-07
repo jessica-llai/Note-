@@ -22,3 +22,34 @@ const multiplier(2,5)= 10
 # setting defualt parameter 
 const increment = (number, value=1) => number + value;
 the value = 1 is set to prevent undefied value induced errors 
+
+# spread operator 
+(NaN, arr1) = (...arr1)
+Math.max(NaN,array)=Math.max(...array)
+array 1= [xxxx]
+array 2=(...array1), after which arr1=arr2
+
+# destructiring to assign new element outside a local range 
+
+const myInfo = {
+name: Jess;
+hobby: cooking; 
+}
+const {name, hobby} = myInfo 
+
+=== 
+const name = myInfo.name;
+const hobby = user.hobby;
+
+# destructuring assignment to assign new variable from nested objects
+const myInfo = {
+name= {
+  chinese: yijing 
+  english: jess
+}
+}
+const {name{chinese=chineseName}} = myInfo
+the babove assign yijing to chineseName
+
+
+
