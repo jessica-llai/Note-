@@ -110,5 +110,116 @@ result:
 ]
 
 
+# object literals 
+const whatever=(x,y,z) = ({x,y,z})
+
+# can omit the function ()
+const whatever: function(x) {}
+===
+const whatever (x) {}
+
+# use class syntax to defind a construction function - the constructor method is used for an object initialised with a classs
+the class is invoked with the 'new'
+
+class Ingredient {
+  constructor (x) {
+    this.name= x
+    }
+}
+
+const beef = new Ingredient('beef')
+
+# getters and setters 
+
+class Cheess {
+  constructor (milk) {
+    this._ingredient=milk
+  }
+  get ingredient () {
+    return this._ingredient
+  }
+  set ingredient (newMilk) {
+  this._ingredient=newMilk
+  }
+}
+
+# use export to share a code block 
+1. export 
+const product (x,y) = {return x*y;}
+const sum(x,y) = {return x+y;}
+export {product, sum}
+
+2. export default 
+export default can only import one function from a file; Additionally, you cannot use export default with var, let, or const
+named export:
+export default function add(x, y) {
+  return x + y;}
+  
+annonymous export:
+export default function(x, y) {
+  return x + y;}
+
+# import functions from another file 
+
+1.{} within specify a function
+import {product} from /.math_function.js/
+2. import all with import * as
+import * as stringFunction from /.math_function.js/
+stringFunction.uppercaseString('happy') =HAPPY
+
+
+# import a function exported from a file with export defualt 
+import add from './abc.js/'
+here, add is not a function but a variable name, so no need to add {}
+
+
+# promise 
+1. promise can either be resolve or reject, and it is a constructor that need 'new' to invoke 
+syntax: const makeInquiry = new Promis ((resolve, reject)=> {}) 
+
+2.the above empty statement gives no way to complete the promise, so the state will always be in pending 
+can add if statement to complete 
+syntax: const makeInquiry = new Promise ((resolve, reject)=> {
+if (condition) {
+resolve("yes we solve this")
+  
+}
+else {reject("try one more time")}
+}) 
+
+3. can add the then to print the result after the promise for reminder 
+syntax:
+makeInquiry.then(result=>{
+  console.log(result)
+  
+4. can add the catch to show the reject 
+makeInquiry.catch(error => {
+  console.log(error);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'
 
 
