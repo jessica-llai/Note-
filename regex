@@ -1,0 +1,41 @@
+REGULAR EXPRESSION 
+
+# test regular expression with test()
+myString = ''
+myRegex = //
+myRegex.test(myString)
+
+# regex is case sensitive 
+if 
+myString="happy dog"
+myRegex=/Happy/
+myRegex test (myString) = false, unless changed to "Happy dog", or with ignore case //i
+syntax: /Happy/i can make myString = true 
+
+# matching with multiple possibilities with |
+myRegex = /a|b|c/
+
+# exact match with match()
+similar function to test() except for order 
+myString.match(/hallo/ or myRegex)
+
+# more same results with / /g (global search)
+myString.match(/hallo/g)
+noted that can put multiple tag next to //gi
+
+wildcard search more possibilities with / .a. / dot period.
+myString="I love beer, bread, bean"
+myRegex = /b./
+then can match all beerm bread, bean 
+
+both specific and wildcard with []
+myRegex = /r[ua]n/ can match "run" and "ran"
+myRegex = /[a-z]/gi can match all letters from a-z in the string
+myRegex = /[a-z0-100]/gi can match all letters from a-z & number 0-100 
+
+
+
+
+
+
+
