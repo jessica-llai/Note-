@@ -1,0 +1,7 @@
+# check data type 
+
+console.log(typeof ""); string
+console.log(typeof 0); number 
+console.log(typeof []); object
+console.log(typeof {}); object
+"" 0 [] {} can be replaced by variableName when checking 
