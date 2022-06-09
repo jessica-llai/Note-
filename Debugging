@@ -5,3 +5,9 @@ console.log(typeof 0); number
 console.log(typeof []); object
 console.log(typeof {}); object
 "" 0 [] {} can be replaced by variableName when checking 
+
+# loop the right times 
+let arr = [a,b,c,d,...,n]
+for (i=0; i<arr.length; i++) {console.log(arr)} - loops through a to n
+for(i=1; i<=arr.length; i++){console.log(arr)} - loops through b to undefined(n+1)
+
