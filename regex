@@ -1,5 +1,7 @@
 REGULAR EXPRESSION 
 
+use: text parsing 
+
 # test regular expression with test()
 myString = ''
 myRegex = //
@@ -32,6 +34,132 @@ both specific and wildcard with []
 myRegex = /r[ua]n/ can match "run" and "ran"
 myRegex = /[a-z]/gi can match all letters from a-z in the string
 myRegex = /[a-z0-100]/gi can match all letters from a-z & number 0-100 
+
+
+
+# caret ^
+1. inside []
+ignore some characters that dont want to match with ^
+the regex: /^[abc]ing/
+things before the [] was ignored 
+2. outside [] 
+searching from the start of the string 
+/^bet/ 
+check if the string starts with bet
+# contrast with $
+/bet$/
+check if the string ends with something 
+
+
+# Match Characters that Occur One or More Times with +
+/a+/ can only identify characters that start with a - ["a banana"] return a
+/a+/g can find [a,a,a,a] from myString["a banana"], since global search enables multiple resultys 
+
+
+# match characters occur zero or more times with *
+/Mm*/ for example will identify the M excatly times and m that occurs for 0 or more times 
+
+# lazy matching 
+with /.+/ bascially search all 
+let regexp = /".+"/g;
+let str = 'a "witch" and her "broom" is one';
+alert( str.match(regexp) ); return "witch" and her "broom"
+
+
+# search all alphanumeric & the opposite 
+/\w/gi = /a-z0-9_/gi
+/\W/gi  = [^A-Za-z0-9_]
+example /430abc%/ will return %
+
+# search all numbers with \d & opposite with \D
+/\d/g = /0-9_/g
+/\D/g = /^0-9_/g
+
+
+# application example 
+Usernames can only use alpha-numeric characters.
+The only numbers in the username have to be at the end. There can be zero or more of them at the end. Username cannot start with the number.
+Username letters can be lowercase and uppercase.
+Usernames have to be at least two characters long. A two-character username can only use alphabet letters as characters.
+
+2 characters - ^[a-z][a-z]+\d*$
+2 + characters - ^[a-z]\d\d+$
+adding up: let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+
+# \s and \S
+1. matching whitespace and other [\r\t\f\n\v] with \s
+regex=/\s/g
+string = "I am a hero"
+const result = string.match(regex); returns [" "," "," "]
+console.log(string.match(regex).length); returns 3, counting the whitespace
+
+2. matching other non-whitespace with \S
+regex=/\S/g
+string = "I am a hero"
+const result = string.match(regex); returns ["Iamahero"]
+console.log(string.match(regex).length); returns 8, counting the non-whitespace characters 
+
+# {}
+1. {x,y} 
+regex=/a{1,3}b/ means that between a and b there should be 1-3 (included) characters => string="a shiba" returns false because (whitespace)shi = 4
+regex=/a\s{1,3}b/ means that between a(whitespace) and b there should be 1-3 (included) characters => true 
+2. a{x,}
+means >=x times of a is find 
+regex=/a{3,}b/ => string="a shiba" returns false, because a didnt appear >=3 times
+3. a{x} 
+means exact x times of a is find 
+regex=/a{3,}ba/ => string="aaaba" returns true, because a appears =3 times
+
+# a? === a*
+usString = color 
+ukString = colour 
+regex = /colou?r/ both string return true as u can exist for 0 and more times 
+
+# (?=...) and (?!=...)
+password = "abcd000"
+regex = /(?=\w){3,6}(?=\D*\d)/ check 3-6 characters password with at least one digit 
+regex = /(?=\w){6}(?=\w*\d)/ check greater than 5 characters password with two consective digit 
+
+# or |
+Regex = /(cocopig|zhuzhu) .*  lai/ will return true to strings cocopig whatever. lai or zhuzhu whatever. lai
+
+# (/w+) 
+capturing groups so need a bracket 
+/(\w+)\s\1\s\1$/ captured group will be counted and number from \1 and account for the whitespace in between
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = "$3 $2 $1"; // Change this line
+let result = str.replace(fixRegex, replaceText); return "three two one"
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // Change this line
+let result = hello.replace(wsRegex,""); // Change this line
+console.log(hello.replace(wsRegex,""))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
