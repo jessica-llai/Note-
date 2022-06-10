@@ -1,0 +1,126 @@
+# array adn object differeces 
+
+let array = []; inside is data; can use for loop to iterate
+beenfit from the zero indexing and built-in acces like pop()
+let object = {}; inside is property/characteristics; can use for loop to iterate
+benefit from both dot and bracket notation to access, change,remove property 
+
+# use array to store a collection of data 
+let arr=[1,2,"a",true,{name:"Jess"}]
+
+# Access an Array's Contents Using Bracket Notation
+let arr=[1,2,"a",true,{name:"Jess"}]
+arr[0]=3
+return arr=[3,2,"a",true,{name:"Jess"}]
+
+# Add/Remove Items to an Array 
+push () add from the end - pop()remove from the end 
+unshift() add from the begining - shift() remove from the begining 
+splice(a,b) remove things from the middle - from the index a and remove b number of elements
+example: 
+arr.splice(2,3) 
+return arr =[3,2,"a"] 
+
+# add&& remove at the same time 
+arr.splice(startIndex, amountToDelete, m, n);
+delete from startIndex and delete amountToDelete numbers, then add m and n at the end of arr
+example: 
+arr.splice(2,2,4,5) 
+return arr=[3,2,"a",4,5]
+
+# copy array items using 
+arr.slice(0,2) not incliding the 2
+return arr=[3,2]
+arr2= ['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
+arr.slice(2,4) return ['warm', 'sunny']
+
+# copy array with ES6 [...arr]
+arr=[1,2,3]
+newArr.push(arr)=[[1,2,3],[1,2,3]]
+
+can dictate the time copied 
+function (arr1,times) {
+let arr2 = [];
+if (times>=1) {
+arr2.push(...arr)
+times --}
+  return arr2
+} 
+
+# combine arrays with spread operator ...arr
+let arr2=[1,2,3,...arr1,'is','fun']
+
+# check if one element exist in the array 
+syntax: indexOf()
+arr1 = [1,2,3]
+arr1.indexOf(0) returns -1(not exist)
+arr1.indexOf(3) returns 2(exist and with the index 2)
+conditional return syntax:
+return arr.indexOf(elem) >= 0 ? true : false;
+
+#Add Key-Value Pairs to JavaScript Objects
+const object1={
+  name: "coco",
+  color:yellow
+}
+object1.breed="shiba" = object1['dog breed'] = "shiba" 
+return
+object1={
+  name: "coco",
+  color:yellow
+  dog breed: "shiba
+}
+
+# modify an object within an object 
+const object1={
+  name: "coco",
+  color: {
+    eye: "black"
+    tail: "yellow"}
+}
+object1.color.tail=brown
+
+return object 1={
+  name: "coco",
+  color: {
+    eye: "black"
+    tail: "brown"}
+}
+
+# bracket notation 
+object1[name] will return "coco"
+
+# delete object.properties 
+delete info.name;
+delete info.age;
+
+
+# check an object has 1 or more proeprty 
+function isEveryoneHere(userObj) {
+  // Only change code below this line
+  if (userObj.hasOwnProperty('Alan')&&userObj.hasOwnProperty('Jeff')&&userObj.hasOwnProperty('Sarah')&&userObj.hasOwnProperty('Ryan')) {
+    return true
+  } {return false}
+  
+  
+# iteration 
+tips: inside the function () is the biggest 
+
+b = {
+  whatever
+}
+function count(a) {
+let result = 0;
+for (let b in a){
+  if (a[b].c= true) {
+  result++;
+  
+  }
+} return result;
+} 
+
+# Generate an Array of All Object Keys with Object.keys()
+
+function (a) {
+return Object.keys(a)
+}
