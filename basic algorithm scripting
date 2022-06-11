@@ -80,9 +80,59 @@ return ""
 # rapid copy teh string with slice(0,num)
 
 
+# remove falsy value from an array 
+
+function removeFalsy(arr){
+  let arr2=[];
+  for (let i=0; i.arr.length; i++){
+  if (arr[i)) arr2.push(arr[i]) 
+  }
+  
+  return arr2
+}
+tips: if (arr[i)) already means if arr[i] is truthy value 
+
+# find the location of a value in an array 
+function getIndexToIns(arr, num) {
+  let  arr2=[num];
+  for (let i=0; i<arr.length;i++){
+    if(arr[i]<num){
+      arr2.unshift(arr[i])
+    } else {
+      arr2.push(arr[i])
+    }
+  }
+  console.log(arr2)
 
 
 
+  return arr2.indexOf(num);
+}
+
+getIndexToIns([40, 60], 50);
+
+# test if two arrays have same elements
+function mutation(arr) {
+  let test = arr[1].toLowerCase();
+  let target = arr[0].toLowerCase();
+  for (let i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
+  }
+  return true;
+}
+
+# chunky 
+
+function chunkArrayInGroups(arr, size) {
+  let arr2=[];
+  for (let i=0;i<arr.length; i+=size){
+      arr2.push(arr.slice(i,i+size))
+  
+  } 
+  return arr2;
+  
+}
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 
 
 
