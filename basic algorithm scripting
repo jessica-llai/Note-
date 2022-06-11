@@ -2,7 +2,77 @@
 # reverse a string 
 function reverseString(str){
 return str
-.split('')
+.split('')   
 .reverse()
 .join('')
 }
+tips: the treatment is based on word, so need to seperate each letters, therefore ''has no whitespace in-between 
+
+# recursion to calculate a factorization 
+!4=4x3x2x1 
+!n=?
+function factorization(n){
+  if (n===0){
+  return 1
+    } 
+  return n*factorislisation(n-1)
+  
+}
+=== alternatives 
+function factorialization(n){
+let product = 1;
+for (let i=2; i<=n; i++){
+  product*=i
+  }
+  return product;
+}
+
+
+# check the length of words in a sentence 
+tips: treatment on words, so need ' 'whitespace between the '' to seperate between words
+
+function countLongestWordInTheSentense(str) {
+  let maxlen=1;
+  words=str.spilt(' ')
+  for (let i=0; i<str.length; i++){
+  if (maxlen < words[i].length){
+    maxlen=words[i].length}
+  }
+  return maxlen
+  
+
+}
+
+# find the largest number in subset of the arrays
+tips: since the result is an array, need to defind an array first 
+function findLargeNumber(arr){
+  const results=[];
+  for (let i=0; i<arr.length; i++){
+    let largest=arr.[i][0]
+    for (let j=0; j<arr.length; j++){
+      if (arr[i][j]> largest){
+        largest= arr[i][j] 
+      }
+   
+  }
+  results [i]= largest 
+  }
+  return results;
+}
+
+# how to ensure both wors and letters can both access?
+function (str,target) {
+  if (str.slice(str.length-target.length)===target){
+    return true 
+    } return false
+}
+
+
+
+
+
+
+
+
+
+
