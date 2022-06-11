@@ -67,7 +67,17 @@ function (str,target) {
     } return false
 }
 
+# repeat a str for n times 
+function repeat(str,n){
+if (n <1){
+return ""
+  } else {
+  return str + repeat(str,n-1)
+    }
+  
+}
 
+# rapid copy teh string with slice(0,num)
 
 
 
