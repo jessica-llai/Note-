@@ -1,0 +1,180 @@
+# add a function into an object 
+let coco = {
+  name: "piggy",
+  breed: "shiba inu"
+  sayLegs: function() {return "The dog" + coco.name + "has 4 legs."}
+}
+
+# using 'this' to make code reusable
+
+let coco = {
+  name: "piggy",
+  breed: "shiba inu"
+  sayLegs: function() {return "The dog" + this.name + "has 4 legs."}
+  color: function() {return "The dog" + this.breed + "is brown."}
+}
+tips: need to within an object 
+
+# constructor 
+function Abc() {
+  this.name = "abccc",
+  this.age = 12,
+  
+}
+tips: 
+constructor function can use this.whatever to defind a new object
+use = rather than : 
+need to capitalise the function 
+
+# assign the object to new variables 
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+let hound = new Dog()
+hound.name will return "Rupert"
+
+
+# assign new properties with constructor & verify the variable 
+function Arms(sets) {
+  this.sets=sets;
+}
+let armsTotal = new Arms(12*3);
+armsTotal instanceof sets; will return true 
+
+# add the property of an object to an array 
+
+function Arms(sets) {
+  this.sets=sets;
+} 
+let armsTotal = new Arms();
+let ownProps = [];
+
+for (property in armsTotal){
+  if(armsTotal.hasOwnProperty(property)){ // this line verify if the property exists
+    ownProps.push(property) // this line push the property into the array ownProps()
+    }
+  
+}
+
+# use prototype to reduce duplicate 
+
+function Cat(food) {
+  this.food = food
+}
+Cat.prototype.exercise = "cat yoga"
+let britishShortHair = new Cat(fish)
+console.log(britishShortHair.exercise); will return "cat yoga"
+
+# iterate over all property 
+two types of property: one directly assign from the constructor name=whatever; the other is assigned by the prototype;
+...
+let ownProps = [];
+let prototypeProps = [];
+for (property in armsTotal){
+  if(armsTotal.hasOwnProperty(property)){ 
+    ownProps.push(property) 
+    } else {
+    prototypeProps.push(property)
+    }
+  
+}
+
+# constructor property 
+use constructor property to test if the property exists 
+
+function Hostel(guest){
+  this.guest = guest;
+}
+
+function room1(person) {
+  if (person.constructor===hostel) {
+    return true } else {
+      return false}
+}
+
+
+# set multiple prototype 
+
+Training.prototype = {
+  constructor: Training, // this line is to prevent the property be overwritten by boolean when verifying if the constructor create certain instance 
+  times: "3 per week",
+  upper body:  function(){console.log(pull up, push up, chest press);},
+  lower body:  function(){console.log(squat, thrust, leg press);},
+}
+
+# check where an object's prototype comes from 
+function Training = {};
+let excercise = new Training;
+Training.prototype.isPrototypOf(excercise); will return true 
+
+
+
+# supertype 
+can set a supertype 
+function Bird(){}
+function Dog(){}
+
+function Animal(){}
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+Bird.prototype = {
+  constructor: Bird
+};
+
+Dog.prototype = {
+  constructor: Dog
+};
+
+# inheritance and prototype 
+constant F = (){
+  this.a=1;
+  this.b = 2;
+}
+let o = new F; 
+F.prototype.b = 2
+F.prototype.c = 3
+// better to use the syntax o.prototype = Object.create(Animal.prototype), if there is a supertype's prototype called Animal.prototype 
+
+o.a = 1
+o.b = 2 // only show the value of a prototype when not seperately defined
+o.c =  3
+o.d = undefined 
+
+# Reset an Inherited Constructor Property
+can set Bird.prototype.constructor = Bird;
+Dog.prototype.constructor = Dog;
+to let its inherit beagle and duck to show the constructor from these two 
+
+# override an inherited method 
+function Parent (){}
+Parent.prototype.wine = function(){console.log(return "Port wine is so good!")}
+Child.prototype = Object.create(Parent.prototype); // inherit the prototype from parent 
+Child.prototype.wine = function(){console.log(return "Ruby is so good!")} // override 
+
+
+# make a variable private 
+public 
+Duck.name = "coco"
+private 
+function Dog(){
+let name = "15";
+this.getName = function(){return name;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
