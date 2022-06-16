@@ -1,0 +1,20 @@
+# Learn About Functional Programming
+input => process => output 
+const prepTea = () => "bubbleTea"
+const getTea = (numbersofCup) => {
+  const teaCup = [];
+  for (let cups =0; cups < numbersofCups; cups+=1){
+    const teaCup = prepTea();
+    teaCup.push(teaCup)
+    }
+    return teaCup;
+}
+const boba4me=getTea(2); will return 2
+
+# callback functions
+syntax:
+const prepareGreentea = () => "Green Tea"
+const getTea = (prepareTea, numbersofCup) => {...}
+const boba4friends(prepareGreenTea, 10); // will return "Grean Tea" x 10
+
+#
