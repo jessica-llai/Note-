@@ -12,3 +12,11 @@ nvm use v11.0.0
 node -v
 npm -v
 
+# exit the failure to complile - control + c
+
+# error msg regarding npm start 
+npm install
+npm install --ignore-scripts
+npm audit fix
+npm start
+
